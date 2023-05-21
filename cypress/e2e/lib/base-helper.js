@@ -1,6 +1,6 @@
 import data from '../../fixtures/example.json'
 /*
-*/
+
 export default function loadData(email, password) {
   let dataUser =  cy.fixture(data).then(function(user) {
     this.email = user.email;
@@ -11,6 +11,7 @@ export default function loadData(email, password) {
   });
   return dataUser;
 }
+*/
 
 /**
  * 
