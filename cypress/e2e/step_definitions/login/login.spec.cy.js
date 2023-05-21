@@ -1,7 +1,8 @@
 /// <reference types="cypress" />
 
-import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When, And, Then } from "@badeball/cypress-cucumber-preprocessor";
 import LoginPage from "../../../pages/login/login-page.js"
+import loadData from "../../lib/base-helper.js";
 
 Given('admin is on login page', () => {
   cy.visit('/')
@@ -9,6 +10,9 @@ Given('admin is on login page', () => {
 
 When("admin inputs valid credentials to login", () => {
   LoginPage.fillLoginCredentials("admin@yourstore.com", "admin");
+  // const dataUser = new loadData();
+  // cy.log(dataUser)
+  // LoginPage.fillLoginCredentials(loadData(dataUser.email['email'], dataUser.password))
   LoginPage.elements.loginButton().click();
 });
 
