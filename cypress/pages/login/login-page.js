@@ -7,10 +7,10 @@ class LoginPage {
     loginButton: () => cy.get('button.login-button'),
   }
 
-  fillLoginCredentials(username, password){
-    this.elements.inputEmailField().type(username);
-    this.elements.inputPasswordField().type(password);
+  fillLoginCredentials(email, password) {
+    this.elements.inputEmailField().click().clear().type(email);
+    this.elements.inputPasswordField().click().clear().type(password);
   }
 }
 
-module.exports = new RakaminLoginPage();
+module.exports = new LoginPage();

@@ -14,10 +14,10 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-// import './commands'
+import './commands'
 
 // Alternatively you can use CommonJS syntax:
-require('./commands')
+// require('./commands')
 before(() => {
   cy.log('I run before every test in every spec file!!!!!!')
 })
