@@ -4,6 +4,7 @@ class LoginPage {
     loginPageTitle: () => cy.get('div h1'),
     inputEmailField: () => cy.get('#Email'),
     inputPasswordField: () => cy.get('#Password'),
+    rememberMeCheckbox: () => cy.get('#RememberMe'),
     loginButton: () => cy.get('button.login-button'),
   }
 

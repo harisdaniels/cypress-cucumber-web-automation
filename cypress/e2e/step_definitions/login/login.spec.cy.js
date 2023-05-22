@@ -9,9 +9,10 @@ Given('admin is on login page', () => {
 });
 
 When("admin inputs valid credentials to login", () => {
-  cy.fixture('loginData.json').then((user) => {
+  cy.fixture('login-data.json').then((user) => {
     LoginPage.fillLoginCredentials(user.email, user.password);
   });
+  LoginPage.elements.rememberMeCheckbox().click();
   LoginPage.elements.loginButton().click();
 });
 
