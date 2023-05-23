@@ -8,7 +8,7 @@ Given('admin is on login page', () => {
   cy.visit('/')
 });
 
-When("admin inputs valid credentials to login", () => {
+When("admin inputs credentials to login", () => {
   cy.fixture('login-data.json').then((user) => {
     LoginPage.fillLoginCredentials(user.email, user.password);
   });
