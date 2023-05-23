@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import { Given, When, And, Then } from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import LoginPage from "../../../pages/login/login-page.js"
 
 
@@ -10,7 +10,8 @@ Given('admin is on login page', () => {
 
 When("admin inputs credentials to login", () => {
   cy.fixture('login-data.json').then((user) => {
-    LoginPage.fillLoginCredentials(user.email, user.password);
+    LoginPage.fillEmail(user.email);
+    LoginPage.fillPassword(user.password);
   });
   LoginPage.elements.rememberMeCheckbox().click();
   LoginPage.elements.loginButton().click();

@@ -8,6 +8,13 @@ class LoginPage {
     loginButton: () => cy.get('button.login-button'),
   }
 
+  fillEmail(email) {
+    this.elements.inputEmailField().click().clear().invoke('val', email);
+  }
+  fillPassword(password) {
+    this.elements.inputPasswordField().click().clear().invoke('val', password);
+  }
+
   fillLoginCredentials(email, password) {
     this.elements.inputEmailField().click().clear().type(email);
     this.elements.inputPasswordField().click().clear().type(password);
