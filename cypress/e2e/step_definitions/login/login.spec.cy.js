@@ -9,14 +9,22 @@ Given('admin is on login page', () => {
 });
 
 When("admin inputs credentials to login", () => {
-  cy.fixture('login-data.json').then((user) => {
-    LoginPage.fillEmail(user.email);
-    LoginPage.fillPassword(user.password);
-  });
+  if (globalThis.scenario.includes("not")) {
+    cy.fixture('login-data.json').then((user) => {
+      LoginPage.fillEmail(user[1].email);
+      LoginPage.fillPassword(user[1].password);
+    });
+  } else {
+    cy.fixture('login-data.json').then((user) => {
+      LoginPage.fillEmail(user[0].email);
+      LoginPage.fillPassword(user[0].password);
+    });
+  }
   LoginPage.elements.rememberMeCheckbox().click();
   LoginPage.elements.loginButton().click();
 });
 
 Then("admin should be redirected to login page", () => {
+  if (globalThis.scenario.includes("not")) LoginPage.elements.errorMessage().should('contain.text', 'Login was unsuccessful');
   LoginPage.elements.loginPageTitle().should('have.text', 'Admin area demo');
 });

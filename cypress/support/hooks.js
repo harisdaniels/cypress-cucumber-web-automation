@@ -18,6 +18,6 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
-before(() => {
-  cy.log('I run before every test in every spec file!!!!!!')
+beforeEach(function() {
+   globalThis.scenario = Cypress.currentTest.title;
 })
