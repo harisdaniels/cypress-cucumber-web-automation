@@ -25,6 +25,6 @@ When("admin inputs credentials to login", () => {
 });
 
 Then("admin should be redirected to login page", () => {
-  (globalThis.scenario.includes("not")) && LoginPage.elements.errorMessage().should('contain.text', 'Login was unsuccessful');
+  globalThis.scenario.includes("not") && LoginPage.elements.errorMessage().should('contain.text', 'Login was unsuccessful');
   LoginPage.elements.loginPageTitle().should('have.text', 'Admin area demo');
 });
