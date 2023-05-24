@@ -1,10 +1,4 @@
-[
-  {
-    "email": "admin@yourstore.com",
-    "password": "admin"
-  },
-  {
-    "email": "aewebewbrbo@mail.com",
-    "password": "aewvevdmin"
-  }
-]
+{
+  "email": "admin@yourstore.com",
+  "password": "admin"
+}

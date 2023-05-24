@@ -2,6 +2,7 @@
 
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import LoginPage from "../../../pages/login/login-page.js"
+import { generateEmailFormat, generateText } from "../../../lib/utilities/utilities.js"
 
 
 Given('admin is on login page', () => {
@@ -9,15 +10,13 @@ Given('admin is on login page', () => {
 });
 
 When("admin inputs credentials to login", () => {
-  if (globalThis.scenario.includes("not")) {
-    cy.fixture('login-data.json').then((user) => {
-      LoginPage.fillEmail(user[1].email);
-      LoginPage.fillPassword(user[1].password);
-    });
+  if (globalThis.scenario.includes("invalid")) {
+    LoginPage.fillEmail(generateEmailFormat());
+    LoginPage.fillPassword(generateText());
   } else {
     cy.fixture('login-data.json').then((user) => {
-      LoginPage.fillEmail(user[0].email);
-      LoginPage.fillPassword(user[0].password);
+      LoginPage.fillEmail(user.email);
+      LoginPage.fillPassword(user.password);
     });
   }
   LoginPage.elements.rememberMeCheckbox().click();
