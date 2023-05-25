@@ -15,3 +15,18 @@ Feature: Login page feature
   Scenario: Admin should not be able to login with invalid credentials
     When admin inputs credentials to login
     Then admin should be redirected to login page
+
+  @smoke-test @login @login-without-inputing-email @p0
+  Scenario: Admin should not be able to login with wrong email
+    When admin inputs credentials to login
+    Then admin should be redirected to login page
+
+  @smoke-test @login @login-without-inputing-password @p0
+  Scenario: Admin should not be able to login with wrong password
+    When admin inputs credentials to login
+    Then admin should be redirected to login page
+
+  @smoke-test @login @login-without-inputing-password @p0
+  Scenario: Admin should not be able to login without entering password
+    When admin inputs credentials to login
+    Then admin should be redirected to login page

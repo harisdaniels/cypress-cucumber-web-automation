@@ -6,7 +6,16 @@ class LoginPage {
     inputPasswordField: () => cy.get('#Password'),
     rememberMeCheckbox: () => cy.get('#RememberMe'),
     loginButton: () => cy.get('button.login-button'),
-    errorMessage: () => cy.get('div.message-error.validation-summary-errors')
+    errorMessage: () => cy.get('div.message-error.validation-summary-errors'),
+    emailErrorMessage: () => cy.get('span.field-validation-error span#Email-error')
+  }
+
+  cleardEmailField() {
+    this.elements.inputEmailField().click().clear();
+  }
+
+  cleardPasswordField() {
+    this.elements.inputPasswordField().click().clear();
   }
 
   fillEmail(email) {
