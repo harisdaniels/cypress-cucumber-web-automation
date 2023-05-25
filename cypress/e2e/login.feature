@@ -16,12 +16,12 @@ Feature: Login page feature
     When admin inputs credentials to login
     Then admin should be redirected to login page
 
-  @smoke-test @login @login-without-inputing-email @p0
+  @smoke-test @login @login-with-invalid-email @p0
   Scenario: Admin should not be able to login with wrong email
     When admin inputs credentials to login
     Then admin should be redirected to login page
 
-  @smoke-test @login @login-without-inputing-password @p0
+  @smoke-test @login @login-with-invalid-password @p0
   Scenario: Admin should not be able to login with wrong password
     When admin inputs credentials to login
     Then admin should be redirected to login page
