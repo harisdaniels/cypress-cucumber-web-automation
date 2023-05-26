@@ -6,6 +6,8 @@ class LoginPage {
     inputPasswordField: () => cy.get('#Password'),
     rememberMeCheckbox: () => cy.get('#RememberMe'),
     loginButton: () => cy.get('button.login-button'),
+    // loginButtonXpath: () => cy.xpath("//button[text()='Log in']"),
+    // loginButtonXpathContainsText: () => cy.xpath("//button[contains(text(),'Log in')]"),
     errorMessage: () => cy.get('div.message-error.validation-summary-errors'),
     emailErrorMessage: () => cy.get('span.field-validation-error span#Email-error')
   }
