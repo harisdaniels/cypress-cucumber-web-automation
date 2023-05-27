@@ -14,9 +14,6 @@ on:
         description: 'Artifact reporting'
         required: false
         type: boolean
-  push:
-    branches:
-    - '*'
 
 jobs:
   build:
