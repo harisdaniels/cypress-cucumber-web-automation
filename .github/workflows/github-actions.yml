@@ -1,10 +1,10 @@
 name: Web Automation
 #on: [push, pull_request]
 on:
-   workflow_dispatch:
+  workflow_dispatch:
     inputs:
       platform:
-        description: 'select where to run'
+        description: 'Select where to run'
         required: true
         default: 'github'
         type: choice
@@ -14,9 +14,6 @@ on:
         description: 'Artifact reporting'
         required: false
         type: boolean
-    push:
-      branches:
-      - '*'
 
 jobs:
   build:
