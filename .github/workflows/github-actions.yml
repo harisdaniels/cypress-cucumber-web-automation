@@ -11,7 +11,7 @@ on:
         options:
         - github
       tags:
-        description: 'Test scenario tags'
+        description: 'Enter cucumber tags'
         required: false
         type: string
       artifacts:
