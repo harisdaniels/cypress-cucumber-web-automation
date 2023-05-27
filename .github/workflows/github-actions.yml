@@ -33,7 +33,7 @@ jobs:
           run:  npm install
         - name: Run Web Automation
           run: |
-            if [[${{ inputs.tags }}]]; then
+            if [ ${{ inputs.tags }} ]; then
               npx cypress run -e TAGS="${{ inputs.tags }}" --browser chrome
             else
               npx cypress run --browser chrome
