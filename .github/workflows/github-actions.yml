@@ -10,6 +10,10 @@ on:
         type: choice
         options:
         - github
+      tags:
+        description: 'Test scenario tags'
+        required: false
+        type: string
       artifacts:
         description: 'Artifact reporting'
         required: false
@@ -28,7 +32,12 @@ jobs:
         - name: Install Dependencies
           run:  npm install
         - name: Run Web Automation
-          run: npx cypress run
+          run: |
+            if [ ${{ inputs.tags }} ]; then
+              npx cypress run -e TAGS="${{ inputs.tags }}" --browser chrome
+            else
+              npx cypress run --browser chrome
+            fi
           continue-on-error: false
         - name: Generate Report
           uses: actions/upload-artifact@v3
