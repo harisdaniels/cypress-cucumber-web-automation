@@ -29,6 +29,8 @@ jobs:
           run:  npm install
         - name: Run Web Automation
           run: npx cypress run
+          env:
+            ELECTRON_EXTRA_LAUNCH_ARGS: '--disable-gpu'
           continue-on-error: false
         - name: Generate Report
           uses: actions/upload-artifact@v3
