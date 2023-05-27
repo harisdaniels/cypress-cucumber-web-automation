@@ -34,7 +34,7 @@ jobs:
         - name: Run Web Automation
           run: |
             if [[${{ inputs.tags }}]]; then
-              npx cypress run -e TAGS="${{ inputs.tags }} --browser chrome
+              npx cypress run -e TAGS="${{ inputs.tags }}" --browser chrome
             else
               npx cypress run --browser chrome
             fi
