@@ -21,7 +21,6 @@ module.exports = defineConfig({
     baseUrl: process.env.BASE_URL,
     defaultCommandTimeout: parseInt(process.env.DEFAULT_TIMEOUT),
     pageLoadTimeout: parseInt(process.env.PAGE_LOAD_TIMEOUT),
-    chromeWebSecurity: false,
     specPattern: '**/*.feature',
     supportFile: 'cypress/support/hooks.js',
     setupNodeEvents
