@@ -28,7 +28,7 @@ on:
         type: boolean
 
 jobs:
-  build:
+  setup-build-test:
     runs-on: ubuntu-latest
     steps:
         - name: Checkout
@@ -42,9 +42,9 @@ jobs:
         - name: Run Web Automation
           run: |
             if [ "${{ github.event.inputs.tags }}" ]; then
-              npx cypress run -e TAGS='"${{ github.event.inputs.tags }}"' --browser ${{ github.event.inputs.browser }} --config video=false
+              npx cypress run -e TAGS='"${{ github.event.inputs.tags }}"' --browser ${{ github.event.inputs.browser }} --headless --config video=false
             else
-              npx cypress run --browser ${{ github.event.inputs.browser }} --config video=false
+              npx cypress run --browser ${{ github.event.inputs.browser }} --headless --config video=false
             fi
           continue-on-error: false
         - name: Generate Report
