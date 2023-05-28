@@ -33,9 +33,9 @@ jobs:
           run:  npm install
         - name: Run Web Automation
           run: |
-            if [ ${{ github.event.inputs.tags }} ]; then
+            if [ "${{ github.event.inputs.tags }}" ]; then
               echo "${{ github.event.inputs.tags }}"
-              npx cypress run -e TAGS='${{ github.event.inputs.tags }}' --browser chrome
+              npx cypress run -e TAGS='"${{ github.event.inputs.tags }}"' --browser chrome
             fi
           continue-on-error: false
         - name: Generate Report
