@@ -9,7 +9,16 @@ on:
         default: 'github'
         type: choice
         options:
-        - github
+          - github
+      browser:
+        description: 'Select browser'
+        required: false
+        default: 'electron'
+        type: choice
+        options:
+          - chrome
+          - firefox
+          - edge
       tags:
         description: 'Enter cucumber tags'
         required: false
@@ -34,9 +43,9 @@ jobs:
         - name: Run Web Automation
           run: |
             if [ "${{ github.event.inputs.tags }}" ]; then
-              npx cypress run -e TAGS='"${{ github.event.inputs.tags }}"' --browser chrome
+              npx cypress run -e TAGS='"${{ github.event.inputs.tags }}"' --browser ${{ github.event.inputs.browser }}
             else
-              npx cypress run --browser chrome
+              npx cypress run --browser ${{ github.event.inputs.browser }}
             fi
           continue-on-error: false
         - name: Generate Report
