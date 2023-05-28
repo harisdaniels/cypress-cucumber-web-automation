@@ -42,9 +42,9 @@ jobs:
         - name: Run Web Automation
           run: |
             if [ "${{ github.event.inputs.tags }}" ]; then
-              npx cypress run -e TAGS='"${{ github.event.inputs.tags }}"' --browser ${{ github.event.inputs.browser }}
+              npx cypress run -e TAGS='"${{ github.event.inputs.tags }}"' --browser ${{ github.event.inputs.browser }} --config video=false
             else
-              npx cypress run --browser ${{ github.event.inputs.browser }}
+              npx cypress run --browser ${{ github.event.inputs.browser }} --config video=false
             fi
           continue-on-error: false
         - name: Generate Report
