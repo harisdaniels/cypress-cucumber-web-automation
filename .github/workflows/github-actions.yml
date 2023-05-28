@@ -12,13 +12,12 @@ on:
           - github
       browser:
         description: 'Select browser'
-        required: false
-        default: 'electron'
         type: choice
         options:
           - chrome
           - firefox
           - edge
+          - electron
       tags:
         description: 'Enter cucumber tags'
         required: false
