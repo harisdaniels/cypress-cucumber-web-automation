@@ -7,7 +7,11 @@ import { LOGIN_DATA } from "../../../lib/data/data.js";
 
 
 Given('admin is on login page', () => {
-  cy.visit('/')
+  cy.visit('/');
+  LoginPage.elements.inputEmailField().should('be.visible');
+  LoginPage.elements.inputPasswordField().should('be.visible');
+  LoginPage.elements.rememberMeCheckbox().should('be.visible');
+  LoginPage.elements.loginButton().should('be.visible');
 });
 
 When("admin inputs credentials to login", () => {
