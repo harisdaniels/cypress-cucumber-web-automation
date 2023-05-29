@@ -28,7 +28,7 @@ on:
         type: boolean
 
 jobs:
-  build:
+  setup-build-test:
     runs-on: ubuntu-latest
     steps:
         - name: Checkout
