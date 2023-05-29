@@ -3,6 +3,7 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import LoginPage from "../../../pages/login/login-page.js"
 import { generateEmailFormat, generateText } from "../../../lib/utilities/utilities.js"
+import { LOGIN_DATA } from "../../../lib/data/data.js";
 
 
 Given('admin is on login page', () => {
@@ -15,25 +16,17 @@ When("admin inputs credentials to login", () => {
     LoginPage.fillEmail(generateEmailFormat());
     LoginPage.fillPassword(generateText());
   } else if (scenarios.includes("with wrong email")) {
-    cy.fixture('login-data.json').then((user) => {
-      LoginPage.fillEmail(generateEmailFormat());
-      LoginPage.fillPassword(user.password);
-    });
+    LoginPage.fillEmail(generateEmailFormat());
+    LoginPage.fillPassword(LOGIN_DATA.password);
   } else if (scenarios.includes("with wrong password")) {
-    cy.fixture('login-data.json').then((user) => {
-      LoginPage.fillEmail(user.email);
-      LoginPage.fillPassword(generateText());
-    });
+    LoginPage.fillEmail(LOGIN_DATA.email);
+    LoginPage.fillPassword(generateText());
   } else if (scenarios.includes("without entering password")) {
-    cy.fixture('login-data.json').then((user) => {
-      LoginPage.fillEmail(user.email);
-      LoginPage.cleardPasswordField();
-    });
+    LoginPage.fillEmail(LOGIN_DATA.email);
+    LoginPage.cleardPasswordField();
   } else {
-    cy.fixture('login-data.json').then((user) => {
-      LoginPage.fillEmail(user.email);
-      LoginPage.fillPassword(user.password);
-    });
+    LoginPage.fillEmail(LOGIN_DATA.email);
+    LoginPage.fillPassword(LOGIN_DATA.password);
   }
   LoginPage.elements.rememberMeCheckbox().click();
   LoginPage.elements.loginButton().click();
