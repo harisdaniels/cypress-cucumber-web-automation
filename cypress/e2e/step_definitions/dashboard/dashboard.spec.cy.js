@@ -2,6 +2,7 @@
 
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import DashboardPage from "../../../pages/dashboard/dashboard-page.js";
+import TopMenuSection from "../../../sections/top-menu-section.js";
 
 
 Then("admin should be redirected to dashboard page", () => {
@@ -9,5 +10,5 @@ Then("admin should be redirected to dashboard page", () => {
 });
 
 When("admin wants to logout", () => {
-  DashboardPage.elements.logoutLinkText().click({force: true});
+  TopMenuSection.elements.logoutLinkText().click({force: true});
 });
