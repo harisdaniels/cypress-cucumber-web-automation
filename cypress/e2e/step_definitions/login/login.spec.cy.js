@@ -41,3 +41,10 @@ Then("admin should be redirected to login page", () => {
     && LoginPage.elements.errorMessage().should('contain.text', 'Login was unsuccessful');
   LoginPage.elements.loginPageTitle().should('have.text', 'Admin area demo');
 });
+
+Given("admin already login", () => {
+  cy.login(LOGIN_DATA.email, LOGIN_DATA.password)
+  cy.location('pathname').should('eql', '/admin/')
+  const url = cy.url();
+  url.should('eql', 'https://admin-demo.nopcommerce.com/admin/')
+});
