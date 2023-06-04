@@ -30,6 +30,8 @@ class LoginPage {
   fillLoginCredentials(email, password) {
     this.elements.inputEmailField().click().clear().type(email);
     this.elements.inputPasswordField().click().clear().type(password);
+    this.elements.rememberMeCheckbox().click();
+    this.elements.loginButton().click();
   }
 }
 

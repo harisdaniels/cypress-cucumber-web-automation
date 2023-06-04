@@ -18,6 +18,18 @@ import './commands'
 import '@cypress/xpath';
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+before(function() {
+   cy.clearAllCookies();
+   cy.clearAllLocalStorage();
+   cy.clearAllSessionStorage();
+});
+
 beforeEach(function() {
    globalThis.scenario = Cypress.currentTest.title;
-})
+});
+
+after(function() {
+   cy.clearAllCookies();
+   cy.clearAllLocalStorage();
+   cy.clearAllSessionStorage();
+});

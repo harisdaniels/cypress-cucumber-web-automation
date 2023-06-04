@@ -1,6 +1,6 @@
 Feature: Login page feature
 
- Background: User should be able to open web login page
+  Background: Admin should be able to open web login page
     Given admin is on login page
 
   # npx cypress run -e TAGS="@login" --headed --browser chrome
