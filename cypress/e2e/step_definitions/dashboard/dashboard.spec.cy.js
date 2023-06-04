@@ -15,14 +15,12 @@ When("admin wants to logout", () => {
 });
 
 When("admin access customer page", () => {
-  cy.visit('/admin');
   SideMenuSection.elements.nopSideBarPusher().click();
   SideMenuSection.elements.customersDropdown().click();
   SideMenuSection.elements.customersList().click();
 });
 
 When("admin access sales page", () => {
-  cy.visit('/admin');
   SideMenuSection.elements.nopSideBarPusher().click();
   SideMenuSection.elements.salesDropdown().click();
   SideMenuSection.elements.orderList().click();

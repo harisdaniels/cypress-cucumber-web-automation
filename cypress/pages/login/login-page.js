@@ -28,10 +28,10 @@ class LoginPage {
   }
 
   fillLoginCredentials(email, password) {
-    this.elements.inputEmailField().click().clear().type(email);
-    this.elements.inputPasswordField().click().clear().type(password);
-    this.elements.rememberMeCheckbox().click();
-    this.elements.loginButton().click();
+    this.elements.inputEmailField().should('be.visible').click().clear().should('not.have.value').type(email).should('have.value', email);
+    this.elements.inputPasswordField().should('be.visible').click().clear().should('not.have.value').type(password).should('have.value', password);
+    this.elements.rememberMeCheckbox().should('be.visible').click();
+    this.elements.loginButton().should('be.visible').click();
   }
 }
 
