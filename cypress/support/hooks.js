@@ -19,9 +19,7 @@ import '@cypress/xpath';
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 before(function() {
-   cy.clearAllCookies();
-   cy.clearAllLocalStorage();
-   cy.clearAllSessionStorage();
+   Cypress.session.clearAllSavedSessions()
 });
 
 beforeEach(function() {
@@ -29,7 +27,5 @@ beforeEach(function() {
 });
 
 after(function() {
-   cy.clearAllCookies();
-   cy.clearAllLocalStorage();
-   cy.clearAllSessionStorage();
+   Cypress.session.clearAllSavedSessions()
 });

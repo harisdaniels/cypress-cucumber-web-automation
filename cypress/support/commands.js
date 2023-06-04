@@ -32,5 +32,5 @@ Cypress.Commands.add('login', (email, password) => {
     LoginPage.fillLoginCredentials(email, password);
   },
   { cacheAcrossSpecs: true });
-  cy.visit('/admin');;
+  cy.visit('/');
 });
