@@ -53,7 +53,7 @@ To learn to organize the test completely, you can learn from [here](https://www.
 - Use Page Object Model (POM): Page objects are intended to make end-to-end tests readable and easy to maintain. Instead of ad-hoc interactions with a page, a test controls the page using an instance that represents the page user interface. This is a Design Pattern that has become popular in test automation for enhancing test maintenance and reducing code duplication.
 
   ```
-      class LoginPage {
+    class LoginPage {
     
       elements = {
         loginPageTitle: () => cy.get('div h1'),
