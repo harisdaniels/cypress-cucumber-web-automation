@@ -48,7 +48,7 @@ jobs:
             fi
           continue-on-error: false
         - name: Generate Report
-          if: ${{ failure() || success() }}
+          if: failure()
           uses: actions/upload-artifact@v3
           with:
             name: reports
