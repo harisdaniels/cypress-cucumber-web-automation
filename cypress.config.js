@@ -23,6 +23,7 @@ module.exports = defineConfig({
     pageLoadTimeout: parseInt(process.env.PAGE_LOAD_TIMEOUT),
     specPattern: '**/*.feature',
     supportFile: 'cypress/support/hooks.js',
+    chromeWebSecurity: false,
     setupNodeEvents
   },
 });

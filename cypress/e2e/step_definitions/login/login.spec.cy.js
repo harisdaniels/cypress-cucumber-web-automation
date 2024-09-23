@@ -7,7 +7,12 @@ import { LOGIN_DATA } from "../../../lib/data/data.js";
 
 
 Given('admin is on login page', () => {
-  cy.visit('/');
+  cy.visit('/', {
+    headers: {
+        'accept': 'application/json, text/plain, */*',
+        'user-agent': 'axios/0.27.2'
+    }, failOnStatusCode: false
+  });
   LoginPage.elements.inputEmailField().should('be.visible');
   LoginPage.elements.inputPasswordField().should('be.visible');
   LoginPage.elements.rememberMeCheckbox().should('be.visible');
