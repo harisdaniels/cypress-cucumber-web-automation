@@ -118,6 +118,6 @@ To run the test, you need to follow these steps
 
 ## Run Test through Github Actions
 - Go to `Actions` tab on the top of Github page
-- Choose `Run Automation Mobile` workflow
+- Choose `Web Automation` workflow
 - Click `Run Workflow` dropdown on the right side of the page
 - Click `Run Workflow` button
